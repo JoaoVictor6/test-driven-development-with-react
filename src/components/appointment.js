@@ -17,7 +17,7 @@ const appointmentTimeOfDay = startAt => {
   return `${h}:${m}`
 }
 
-export function Appointment({customer}){
+function Appointment({customer}){
   return (
     <h1>
       {customer.firstName}

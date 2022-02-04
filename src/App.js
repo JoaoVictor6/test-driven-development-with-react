@@ -1,8 +1,10 @@
+import { AppointmentsDayView } from "./components/appointment";
+import { sampleAppointments } from "./sampleData";
 
 function App() {
   return (
     <div className="App">
-      <h1>App react for tdd study</h1>
+      <AppointmentsDayView appointments={sampleAppointments}/>
     </div>
   );
 }
