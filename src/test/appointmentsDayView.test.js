@@ -1,7 +1,8 @@
+/* eslint-disable testing-library/no-container */
 import React from 'react'
-import ReactDOM from 'react-dom'
 import ReactTestUtils from 'react-dom/test-utils'
-import { Appointment, AppointmentsDayView } from '../components/appointment'
+import ReactDOM from 'react-dom'
+import { Appointment, AppointmentsDayView } from '../components/appointmentsDayView'
 
 describe('Appointment', () => {
   let container
@@ -9,16 +10,17 @@ describe('Appointment', () => {
   beforeEach(() => {
     container = document.createElement('div')
   })
-
+  
   it('renders the customer first name', () => {
     let customer = { firstName: 'Ashley' }
-    render(<Appointment customer={customer}/>, container)
+    
+    render(<Appointment customer={customer} />)
 
     expect(container.textContent).toMatch('Ashley')
   })
   it('renders another customer first name', () => {
     let customer = { firstName: 'Jordan' }
-    render(<Appointment customer={customer}/>, container)
+    render(<Appointment customer={customer} />)
     
     expect(container.textContent).toMatch('Jordan')
   })
@@ -31,7 +33,7 @@ describe('AppointmentsDayView', () => {
   beforeEach(() => {
     container = document.createElement('div')
   })
-
+  
   const today = new Date()
   const appointments = [
     {

@@ -1,4 +1,4 @@
-import { AppointmentsDayView } from "./components/appointment";
+import { AppointmentsDayView } from "./components/appointmentsDayView";
 import { sampleAppointments } from "./sampleData";
 
 function App() {
