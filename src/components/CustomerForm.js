@@ -38,6 +38,7 @@ export function CustomerForm({onSubmit, ...customerProps}) {
         defaultValue={phone}
         onChange={handleChange}
       />
+      <input type="submit" value="add" />
     </form>
   )
 }
