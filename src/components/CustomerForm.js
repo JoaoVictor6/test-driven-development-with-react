@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 
 export function CustomerForm({onSubmit, ...customerProps}) {
-  const { firstName } = customerProps
+  const { firstName, lastName, phone } = customerProps
   const [customer, setCustomer] = useState(customerProps)
+  const handleChange = ({target}) => {
+    setCustomer(customer => ({
+      ...customer,
+      [target.name]: target.value
+    }))
+  }
   return (
     <form 
       id="customer"
@@ -14,12 +20,23 @@ export function CustomerForm({onSubmit, ...customerProps}) {
         name="firstName"
         id="firstName"
         value={firstName}
-        onChange={({target}) => {
-          setCustomer(customer => ({
-            ...customer,
-            firstName: target.value
-          }))
-        }}
+        onChange={handleChange}
+      />
+      <label htmlFor="lastName">Last name</label>
+      <input 
+        type="text"
+        id="lastName"
+        name="lastName"
+        defaultValue={lastName}
+        onChange={handleChange}
+      />
+      <label htmlFor="phone">Phone number</label>
+      <input 
+        type="tel"
+        name="phone"
+        id="phone"
+        defaultValue={phone}
+        onChange={handleChange}
       />
     </form>
   )
