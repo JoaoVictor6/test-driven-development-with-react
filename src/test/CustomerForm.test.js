@@ -82,7 +82,7 @@ describe('CustomerForm', () => {
     
     expect(form('customer')).not.toBeNull();
   })
-  
+
   describe('firstNameField', () => {
     itRendersAsATextBox('firstName')
     itIncludesExistingValue('firstName')
@@ -106,5 +106,12 @@ describe('CustomerForm', () => {
     itAssignsAnIdThatMatchesTheLabelId('phone');
     itSubmitsExistingValue('phone', 23123);
     itSubmitNewValue('phone', 1231, 6564);
+  })
+
+  it('has a submit button', () => {
+    render(<CustomerForm />)
+    const submitButton = container.querySelector('input[type="submit"]')
+
+    expect(submitButton).not.toBeNull()
   })
 })
