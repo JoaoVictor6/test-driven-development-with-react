@@ -83,7 +83,7 @@ describe('CustomerForm', () => {
     expect(form('customer')).not.toBeNull();
   })
 
-  describe('firstNameField', () => {
+  describe('first name field', () => {
     itRendersAsATextBox('firstName')
     itIncludesExistingValue('firstName')
     itRendersALabel('firstName', 'First name')
@@ -112,6 +112,6 @@ describe('CustomerForm', () => {
     render(<CustomerForm />)
     const submitButton = container.querySelector('input[type="submit"]')
 
-    expect(submitButton).not.toBeNull()
+    expect(submitButton).not.toBeNull() 
   })
 })
